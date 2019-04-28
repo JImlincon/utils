@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>debouce and throttle</title>
+    <style>
+        body {
+            height: 3000px
+        }
+    </style>
+</head>
+
+<body>
+    <input id="search" />
+    <input id="search1" />
+    <!-- <input id="search1" onkeydown="inputDebounce()" /> -->
+    <script>
+        function debounce(fn, delay) {
+            let timer = null;
+            return function () {
+                let args = arguments, context = this
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function () { fn.apply(context, args); }, delay);
+            }
+        }
+
+        function throttle(fn, delay) {
+            let args = arguments,
+                context = this,
+                timer = null,
+                remaining = 0,
+                previous = new Date();
+
+            return function () {
+                let now = new Date();
+                remaining = now - previous;
+
+                if (remaining >= delay) {
+                    if (timer) {
+                        clearTimeout(timer);
+                    }
+
+                    fn.apply(context, args);
+                    previous = now;
+                } else {
+                    if (!timer) {
+                        timer = setTimeout(function () {
+                            fn.apply(context, args);
+                            previous = new Date();
+                        }, delay - remaining);
+                    }
+                }
+            };
+        }
+
+        var debounce1 = function (action, idle) {
+            var last
+            return function () {
+                var ctx = this, args = arguments
+                clearTimeout(last)
+                last = setTimeout(function () {
+                    action.apply(ctx, args)
+                }, idle)
+            }
+        }
+
+        var debounce2 = function (func, delay) {
+            var timeHandle = null;
+            return function () {
+                var context = this,
+                    args = arguments,
+                    later = function () {
+                        func.apply(context, arguments);
+                    };
+                if (timeHandle) {
+                    clearTimeout(timeHandle); // 覆盖上次事件回调：清除上次未执行的回调，新建个回调执行定时器
+                }
+                timeHandle = setTimeout(later, delay);
+            }
+        }
+        var throttle1 = function (func, delay) {
+            var previous = 0;
+            return function () {
+                var context = this,
+                    args = arguments,
+                    curr = Date.now();
+                // 如果时间间隔超过delay时间，则执行回调
+                if (curr - previous >= delay) {
+                    previous = curr; // 更新previous
+                    func.apply(context, args);
+                }
+            }
+        }
+
+        function throttle2(fn, delay) {
+            var timer;
+            return function () {
+                var context = this; // 函数执行上下文
+                var args = arguments;
+                // console.log('1', new Date());
+                if (timer) {
+                    return;
+                }
+                timer = setTimeout(() => {
+                    fn.apply(context, args);
+                    clearTimeout(timer);
+                    // setTimeout返回一个整数，clearTimeout后也还是整数，因此需要置空，setInterval也是如此
+                    timer = null;
+                }, delay);
+            }
+        }
+
+        function throttle3(fn, times = 300) {
+            let bool = true
+            return function () {
+                if (!bool) {
+                    return false
+                }
+                bool = false
+                setTimeout(() => {
+                    bool = true
+                    fn.apply(this, arguments)
+                }, times)
+            }
+
+        }
+
+        var input = document.getElementById('search')
+        var input1 = document.getElementById('search1')
+
+        input.addEventListener('keyup', () => {
+            getValue(input)
+        })
+        input1.addEventListener('keyup', debounce(() => { getValue(input1) }, 500))
+
+        var inputDebounce = debounce1((event) => { log(event) }, 500)
+
+        window.addEventListener('scroll', throttle2(() => {
+            console.log('scroll')
+        }, 500))
+
+        function getValue(eve) {
+            console.log(eve.value)
+        }
+    </script>
+</body>
+
+</html>
