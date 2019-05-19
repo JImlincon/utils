@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>highlight with regexp</title>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/vue/2.5.12/vue.min.js"></script>
+    <style>
+        .highlight {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="searchVal">
+        <ul>
+            <li v-for="item in filterList" v-html="matchStr(item.label)">
+            <!-- <li v-for="item in filterList" v-html="item.label"> -->
+            </li>
+        </ul>
+        <!-- <div v-html="str"></div> -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    searchVal: '',
+                    list: [
+                        { level: 4, label: "扬州瘦?西湖w<a href='alert(1)>13333</a>'", scene: '瘦西湖' },
+                        { level: 5, label: '南京夫+.子庙南京', scene: '夫子庙' },
+                        { level: 2, label: '北京天安门南京', scene: '天安门' },
+                        { level: 3, label: '武汉黄鹤楼', scene: '黄鹤楼' },
+                        { level: 2, label: '天津南京世纪南京钟南京广场', scene: '世纪钟广场' },
+                        { level: 2, label: '上海东方明珠', scene: '东方明珠' },
+                        { level: 4, label: '\安徽黄山^$\.*+?()[]{}|', scene: '黄山' },
+                    ],
+                    filterList: [],
+                    str: "扬州瘦?西湖w<a href='alert(1)>13333</a>'"
+                }
+            },
+            mounted() {
+                this.filterList = this.list.slice()
+                console.log(this.filterList)
+            },
+            methods: {
+                matchStr(str) {
+                    console.log('get in..')
+                    if (!this.searchVal) return str
+                    var invalidChar = '^$\.*+?()[]{}|'
+                    var replaceObj = invalidChar.split('').reduce((obj, item) => {
+                        obj[item] = '\\' + item
+                        return obj
+                    }, {})
+                    var rellaceStr = this.searchVal.replace(/[*^$.+?()[\]{}|]/g, function (a) {
+                        return replaceObj[a]
+                    })
+                    let reg = new RegExp(rellaceStr, 'g')
+                    str = str.replace(reg, function (a, b, c, d, e) {
+                        return `<span class="highlight">${a}</span>`
+                    })
+                    console.log('get ready..')
+                    return str
+                }
+            },
+            watch: {
+                searchVal(val) {
+                    this.filterList = this.list.filter(item => {
+                        return ~item.label.indexOf(val)
+                    })
+                    // this.filterList = this.filterList.map(item => {
+                    //     item.label = this.matchStr(item.label)
+                    //     return item
+                    // })
+                    console.log(this.filterList, this.list)
+
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

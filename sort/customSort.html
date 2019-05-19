@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义权重排序</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">{{JSON.stringify(list, null , 4)}}
+        <ul>
+            <li v-for="item in list">级别：{{item.level}}-----权重：{{item.order}} ----- {{item.label}}----{{item.scene}} </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    // level按照从大到小，然后根据自定义label优先级排序
+                    list: [
+                        { level: 4, label: '扬州', scene: '瘦西湖' },
+                        { level: 5, label: '南京', scene: '夫子庙' },
+                        { level: 2, label: '北京', scene: '天安门' },
+                        { level: 3, label: '武汉', scene: '黄鹤楼' },
+                        { level: 2, label: '天津', scene: '世纪钟广场' },
+                        { level: 2, label: '上海', scene: '东方明珠' },
+                        { level: 4, label: '安徽', scene: '黄山' },
+                    ]
+                }
+            },
+            mounted() {
+                this.sortList()
+            },
+            methods: {
+                sortList() {
+                    let sortOrder = {'安徽':7, '扬州': 6, '南京': 5, '上海': 4, '北京': 3, '武汉': 2, '天津': 1 }
+                    this.list = this.list.map(item => {
+                        item.order = sortOrder[item.label]
+                        return item
+                    })
+                    this.list.sort((a, b) => {
+                        if (a.level === b.level) {
+                            return b.order - a.order
+                        } else {
+                            return b.level - a.level
+                        }
+                    })
+                    console.log(this.list)
+
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
