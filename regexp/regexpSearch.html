@@ -20,7 +20,7 @@
         <input type="text" v-model="searchVal">
         <ul>
             <li v-for="item in filterList" v-html="matchStr(item.label)">
-            <!-- <li v-for="item in filterList" v-html="item.label"> -->
+                <!-- <li v-for="item in filterList" v-html="item.label"> -->
             </li>
         </ul>
         <!-- <div v-html="str"></div> -->
@@ -78,7 +78,6 @@
                     //     return item
                     // })
                     console.log(this.filterList, this.list)
-
                 }
             }
         })
