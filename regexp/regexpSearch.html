@@ -38,7 +38,7 @@
                         { level: 3, label: '武汉黄鹤楼', scene: '黄鹤楼' },
                         { level: 2, label: '天津南京世纪南京钟南京广场', scene: '世纪钟广场' },
                         { level: 2, label: '上海东方明珠', scene: '东方明珠' },
-                        { level: 4, label: '\安徽黄山^$\.*+?()[]{}|', scene: '黄山' },
+                        { level: 4, label: '/\\安徽/黄山^$\.*+?()[]{}|', scene: '黄山' },
                     ],
                     filterList: [],
                     str: "扬州瘦?西湖w<a href='alert(1)>13333</a>'"
@@ -49,6 +49,9 @@
                 console.log(this.filterList)
             },
             methods: {
+                escapeRegExp(str) {
+                    return str.replace(/[-[\]\/{}()*+?.^$|\\]/g, '\\$&')
+                },
                 matchStr(str) {
                     console.log('get in..')
                     if (!this.searchVal) return str
@@ -60,7 +63,9 @@
                     var rellaceStr = this.searchVal.replace(/[*^$.+?()[\]{}|]/g, function (a) {
                         return replaceObj[a]
                     })
+                    console.log(this.escapeRegExp(str))
                     let reg = new RegExp(rellaceStr, 'g')
+                    // let reg = new RegExp(this.escapeRegExp(this.searchVal), 'g')
                     str = str.replace(reg, function (a, b, c, d, e) {
                         return `<span class="highlight">${a}</span>`
                     })

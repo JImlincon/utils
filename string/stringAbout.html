@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串方法相关</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        字符串：
+        <input v-model="value" /> 截取位数（字符数目，中文double）
+        <input v-model.number="cutLength" />
+        <p>字符串截取：{{sortList(value, cutLength)}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    value: 'asdsdggweg',
+                    cutLength: 10
+                }
+            },
+            mounted() {
+                let arr = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
+                console.log(arr)
+                let items = ['name', 'sex', 'age']
+                for (let i = 0, obj; obj = items[i++];) {
+                    console.log(i, obj)
+                }
+            },
+            methods: {
+                sortList(str, cutLength) {
+                    let reg = /[^\x00-\xFF]/g;
+                    if (str.replace(reg, "mm").length <= cutLength) { return str; }
+                    let m = Math.floor(cutLength / 2);
+                    for (let i = m; i < str.length; i++) {
+                        if (str.substr(0, i).replace(reg, "mm").length >= cutLength) {
+                            return str.substr(0, i) + "...";
+                        }
+                    }
+                    return str
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
