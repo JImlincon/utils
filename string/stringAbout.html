@@ -15,6 +15,7 @@
         <input v-model="value" /> 截取位数（字符数目，中文double）
         <input v-model.number="cutLength" />
         <p>字符串截取：{{sortList(value, cutLength)}}</p>
+        存储容量大小：<input v-model.number="volumn" /> {{parseBytes(volumn)}}
     </div>
     <script>
         new Vue({
@@ -22,7 +23,8 @@
             data() {
                 return {
                     value: 'asdsdggweg',
-                    cutLength: 10
+                    cutLength: 10,
+                    volumn: ''
                 }
             },
             mounted() {
@@ -32,6 +34,7 @@
                 for (let i = 0, obj; obj = items[i++];) {
                     console.log(i, obj)
                 }
+                console.log(this.parseBytes(3876453))
             },
             methods: {
                 sortList(str, cutLength) {
@@ -44,7 +47,23 @@
                         }
                     }
                     return str
+                },
+                /* 
+                    * 解析文件字节数
+                    * @param  {[type]} bytes 总字节数
+                    * @param  {[type]} decimal 小数点后位数
+                    * @return {[type]} 解析后的文件大小
+                */
+                parseBytes(bytes = 0, decimal = 3) {
+                    let fileSize = 0, units = ["KB", "MB", "GB", "TB"];
+                    for (let i = 0, size = bytes / 1024; size > 1; size /= 1024, i++) {
+                        console.log(size)
+                        fileSize = size.toFixed(decimal) + units[i]
+                    }
+                    return fileSize || (bytes + 'B');
                 }
+
+
             }
         })
     </script>
