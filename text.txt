@@ -1,1 +1,24 @@
 thursday today wish you good luck. have a goog dream
+
+localhost  wHdUjlLpP9(*
+
+初始化数据库：
+
+mysqld --initialize --console  mysqld install  net start mysql
+
+启动
+mysqld --console
+
+关闭
+mysqladmin -uroot shutdown   net stop mysql
+
+登录本机的 MySQL 数据库
+mysql -u root -p
+
+mysqladmin -u用户名 -p password 新密码
+mysqladmin -uroot -p password root
+修改成功之后，登录：
+mysql -u用户名 -p密码
+
+
+
