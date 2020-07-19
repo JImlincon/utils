@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+
+<body>
+    <h2>图片文字排列</h2>
+    <div class="text-left text-img-v-center">
+        <span>我是文字</span><img class="border" src="g.png" />
+    </div>
+    <div class="text-left text-img-v-center mt20">
+        <div class="inline-block ml10">
+            <span>我是文字</span><i class="border ml10"></i>
+        </div>
+        <div class="inline-block ml10">
+            <span>我是文字</span><i class="border ml10"></i>
+        </div>
+    </div>
+    <ul class="ul-list-content">
+        <li class="list-item float-left-random bg overhidden">
+            <span class="float-l text-overflow">学而时习之不亦说乎学而时习之不亦说乎学而时习之不亦说乎学而时习之不亦说乎学而时习之不亦说乎学而时习之不亦说乎学而时习之不亦说乎</span>
+            <span class="float-r"><i class="inline-block v-middle"></i></span>
+        </li>
+    </ul>
+    <ul class="ul-list-content">
+        <li class="list-item  bg">
+            <span class="float-l1">学而时习之不亦说乎</span>
+            <!-- <span class="float-r1"> 
+                <i class="inline-block v-middle"></i>
+            </span> -->
+        </li>
+    </ul>
+    <ul class="ul-list-content">
+        <li class="list-item  bg">
+            学而时习之不亦说乎
+        </li>
+    </ul>
+
+    <h2>一、水平居中</h2>
+    <h3>1.单行居中</h3>
+    <div class="text-center">
+        我见青山多妩媚，料青山见我亦如是
+        <p>北京的列车开往南京，我看着你离去的背影止不住泪流</p>
+    </div>
+    <h3>2.单个块级元素</h3>
+    <div>
+        <p class="block-margin-auto">北京的列车开往南京，我看着你离去的背影止不住泪流</p>
+    </div>
+    <h3>3.多个块级元素</h3>
+    <div class="text-center">
+        <div class="inline-block">雄关漫道真如铁</div>
+        <div class="inline-block">雄关漫道真如铁</div>
+        <div class="inline-block">雄关漫道真如铁</div>
+    </div>
+    <h3>4.绝对定位</h3>
+    <div class="p-relative clear">
+        <div class="p-absolute-center">雄关漫道真如铁</div>
+    </div>
+    <h3>5.多个元素居中flex</h3>
+    <div class="flex-h-center">
+        <div>雄关漫道真如铁</div>
+        <div>雄关漫道真如铁</div>
+        <div>雄关漫道真如铁</div>
+    </div>
+
+    <h2>二、垂直居中</h2>
+    <h3>1.单行居中</h3>
+    <div class="vertical-center">
+        <div>还在梅雨季节，不停的下雨，人都要发霉了</div>
+    </div>
+    <h3>2.图片居中</h3>
+    <div class="vertical-center clearpad border">
+        <img src="./g.png" class="v-middle border">
+    </div>
+    <h3>3.table-cell垂直居中</h3>
+    <div class="table-v-center">
+        <div>还在梅雨季节，不停的下雨，人都要发霉了</div>
+    </div>
+    <h3>4.flex垂直居中</h3>
+    <div class="flex-v-center">
+        <div>还在梅雨季节，不停的下雨，人都要发霉了</div>
+    </div>
+
+    <h2>三、水平垂直居中</h2>
+    <h3>1.行内图片</h3>
+    <div class="text-center">
+        <img src="./g.png" class="v-middle border"><span>望长城内外惟余莽莽</span>
+    </div>
+    <h3>2.table-cell</h3>
+    <div class="table-v-center">
+        <div class="margin-auto">
+            <span>望长城内外惟余莽莽</span>
+            <span>学而不思则罔</span>
+        </div>
+    </div>
+    <h3>3.table-cell</h3>
+    <button class="button-center">
+        <div >
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </button>
+    <h3>4.absolute margin水平垂直居中</h3>
+    <div class="p-relative" style="height:100px">
+        <div class="p-v-h-center">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>5.flex margin水平垂直居中</h3>
+    <div class="d-flex" style="height:100px">
+        <div class="m-auto">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>6.margin vh水平垂直居中</h3>
+    <div style="height:100px">
+        <div class="m-v-h-center">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h2>四、两列布局左侧固定 右侧自适应</h2>
+    <h3>1. margin float</h3>
+    <div>
+        <div class="float-l bg" style="width:200px;height:300px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="bg" style="margin-left:200px;height:300px">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>2. margin float-fix</h3>
+    <div>
+        <div class="float-l bg" style="width:200px;height:300px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="float-right-fix">
+            <div class="float-fix bg" style="margin-left:200px;height:300px">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+    </div>
+    <h3>3. float overflow</h3>
+    <div>
+        <div class="float-l bg" style="width:200px;height:300px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="overhidden bg" style="height:300px">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>4. table</h3>
+    <div class="d-table" style="height:300px;">
+        <div class="d-tablecell bg" style="width:200px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>5. position</h3>
+    <div class="p-relative" style="height:300px;">
+        <div class="p-absolute-left bg" style="width:200px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="p-absolute-left bg" style="left: 200px;right: 0;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>6. flex</h3>
+    <div class="d-flex" style="height:300px;">
+        <div class="bg flex-none" style="width:200px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-auto bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>7. grid</h3>
+    <div class="d-twogrids-left-fixed" style="height:300px;">
+        <div class="bg" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h2>五 右侧定宽左侧自适应</h2>
+    <h3>1. float</h3>
+    <div class="float-left-random" style="height:300px;">
+        <div class="float-l" style="height:300px;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="float-r bg" style="height:300px;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>2. table</h3>
+    <div class="d-table" style="height:300px;">
+        <div class="d-tablecell" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell bg" style="width:200px;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>3. position</h3>
+    <div class="p-relative" style="height:300px;">
+        <div class="p-absolute-right" style="right:200px;left:0;background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="p-absolute-right bg" style="width:200px;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>4. flex</h3>
+    <div class="d-flex" style="height:300px;">
+        <div class="flex-auto" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-none bg" style="width:200px;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>5. grid</h3>
+    <div class="d-twogrids-right-fixed" style="height:300px;">
+        <div style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h2>六. 左侧中间固定右侧自适应</h2>
+    <h3>1. float</h3>
+    <div class="layout-three-right-fixed " style="height:300px; min-width: 310px;">
+        <div class="float-l " style="width:100px;height:300px; background-color: antiquewhite; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="float-l bg" style="width: 200px;height:300px; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="bg" style="margin-left: 300px;height:300px; background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>2. position</h3>
+    <div class="p-relative" style="height:300px;">
+        <div class="p-absolute-left" style="width:100px;height:300px; background-color: antiquewhite; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="p-absolute-left bg" style="left:100px;width: 200px;height:300px; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="p-absolute-left " style="left:300px;right:0;height:300px; background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>3. table</h3>
+    <div class="d-table" style="height:300px;">
+        <div class="d-tablecell" style="width:100px; background-color: antiquewhite; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell bg" style="width: 200px; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>4. flex</h3>
+    <div class="d-flex" style="height:300px;">
+        <div class="flex-none" style="width:100px; background-color: antiquewhite; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-none bg" style="width: 200px; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-auto" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>5. grid</h3>
+    <div class="d-threegrids-right-auto" style="height:300px;">
+        <div style="background-color: antiquewhite; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h2>七. 左右固定中间自适应</h2>
+    <h3>1. float双飞翼</h3>
+    <div class="double-wings-layout" style="height:300px;">
+        <div class="double-wings-center" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="double-wings-left bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="double-wings-right" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>2. float圣杯</h3>
+    <div class="grail-layout" style="height:300px;min-width: 200px;">
+        <div class="grail-center" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="grail-left bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="grail-right" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>3. grid</h3>
+    <div class="grid-layout-middle-auto" style="height:300px;">
+        <div class="grid-leftside" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="grid-center bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="grail-rightside" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>4. table</h3>
+    <div class="d-table" style="height:300px;">
+        <div class="d-tablecell" style="width:100px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-tablecell bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell" style="width:200px;background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>5. flex</h3>
+    <div class="d-flex" style="height:300px;">
+        <div class="flex-none" style="width:100px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="flex-auto bg">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-none" style="width:200px;background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>6. position</h3>
+    <div class="p-relative" style="height:300px;">
+        <div class="p-absolute-left" style="width:100px;height:300px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="flex-auto bg" style="margin: 0 200px 0 100px;height:300px;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="p-absolute-right" style="width:200px;height:300px;background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+
+    <h2>八. 四列等宽</h2>
+    <h3>1. table</h3>
+    <div class="d-table" style="height:300px;">
+        <div class="d-tablecell" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-tablecell bg" style="background-color:azure">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="d-tablecell" style="background-color:blueviolet ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>2. flex</h3>
+    <div class="d-flex ml10-minus" style="height:300px;">
+        <div class="flex-auto ml10" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="flex-auto bg ml10" style="background-color:azure">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-auto ml10" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="flex-auto ml10" style="background-color:blueviolet ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>3. 多列gird</h3>
+    <div class="d-gird-column-multiple ml10-minus" style="height:300px;">
+        <div class="ml10" style="background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="bg ml10" style="background-color:azure">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="ml10" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="ml10" style="background-color:blueviolet ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="ml10" style="background-color: aqua; ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="ml10" style="background-color:blueviolet ">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+    <h3>九. 九宫格</h3>
+    <h3>1. table</h3>
+    <div class="d-table ml10-minus" style="height:300px;margin: 0 auto;">
+        <div class="d-table-row">
+            <div class="ml10 d-tablecell border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg ml10 d-tablecell border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="ml10 d-tablecell border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-table-row">
+            <div class="ml10 d-tablecell border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg ml10 d-tablecell border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="ml10 d-tablecell border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-table-row">
+            <div class="ml10 d-tablecell border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg ml10 d-tablecell border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="ml10 d-tablecell border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>2. flex</h3>
+    <div class="d-flex-column" style="height:300px;margin: 0 auto;">
+        <div class="d-flex-row flex-auto d-flex">
+            <div class="flex-auto border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg flex-auto border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="flex-auto border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-flex-row flex-auto d-flex">
+            <div class="flex-auto border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg flex-auto border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="flex-auto border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="d-flex-row flex-auto d-flex">
+            <div class="flex-auto border" style="background-color: antiquewhite; ">
+                <div class="content">
+                    <span>望长城内外惟余莽莽</span>
+                </div>
+            </div>
+            <div class="bg flex-auto border" style="background-color:azure">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+            <div class="flex-auto border" style="background-color: aqua; ">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>3. flex无需嵌套</h3>
+    <div class="d-flex-wrap" style="height:300px;margin: 0 auto;">
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border" style="width:33.333%; box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>3. flex宽高相等</h3>
+    <div class="d-flex-wrap" style="margin: 0 auto;">
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+        <div class="border p-relative" style="width:33.333%;padding-top:33.33%;box-sizing: border-box;height:50px;background-color: antiquewhite; ">
+            <div class="content p-absolute-full">
+                <span>望长城内外惟余莽莽</span>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>4. grid</h3>
+    <div class="d-grid-multiple" style="height:300px;margin: 0 auto;">
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+        <div class="border" style="background-color: antiquewhite;">
+            <span>望长城内外惟余莽莽</span>
+        </div>
+    </div>
+
+
+    <h3>5. flex全部</h3>
+    <div class="d-flex-fullpage d-flex-column">
+        <div id="flex-header" class="border" style="height: 50px;">
+            望长城内外惟余莽莽
+        </div>
+        <div class="border flex-content d-flex flex-auto" style="background-color: antiquewhite;">
+            <div class="border" style="width: 200px;">
+                望长城内外惟余莽莽
+            </div>
+            <div class="border flex-auto" style="overflow: auto;">
+                望长城内外惟余莽莽
+            </div>
+        </div>
+        <div id="flex-footer" style="height: 50px;">
+            望长城内外惟余莽莽
+        </div>
+    </div>
+
+</body>
+
+</html>

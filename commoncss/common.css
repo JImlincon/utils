@@ -1,0 +1,508 @@
+/* http://www.sweet-kk.top/css-layout-demo/html/index.html
+https://github.com/Sweet-KK/css-layout */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mr30 {
+    margin-right: 30px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+
+/* font-size */
+
+.f0 {
+    font-size: 0;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.f13 {
+    font-size: 13px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.f28 {
+    font-size: 28px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.break-word {
+    word-wrap: break-word;
+}
+
+.cpointer {
+    cursor: pointer;
+}
+
+.visivle {
+    visibility: visible;
+}
+
+.vhidden {
+    visibility: hidden;
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-img-v-center * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-img-v-center i,
+.ul-list-content i {
+    width: 30px;
+    height: 20px;
+    background: #ddd url('g.png') no-repeat center center / 30px 20px;
+}
+
+.ul-list-content {
+    list-style: none;
+}
+
+.ul-list-content .list-item {
+    height: 50px;
+    line-height: 50px;
+}
+
+.block-margin-auto {
+    width: 200px;
+    margin: auto;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /* hack for IE6/7 */
+}
+
+.flex-h-center {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center {
+    height: 50px;
+    line-height: 50px;
+}
+
+.clearpad {
+    font-size: 0;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.border {
+    border: 1px solid #ddd;
+}
+
+.bg {
+    background-color: #ddd;
+}
+
+.table-v-center {
+    display: table-cell;
+    vertical-align: middle;
+    width: 600px;
+    height: 300px;
+}
+
+.flex-v-center {
+    display: flex;
+    align-items: center;
+}
+
+.margin-auto {
+    margin: auto;
+    width: 100px;
+    height: 50px;
+}
+
+.button-center {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+.p-v-h-center {
+    position: absolute;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.p-absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.m-v-h-center {
+    margin: 50vh auto 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 60px;
+}
+
+.float-l {
+    float: left;
+}
+
+.float-r {
+    float: right;
+}
+
+.float-right-fix {
+    float: right;
+    width: 100%;
+    margin-left: -200px;
+}
+
+.overhidden {
+    overflow: hidden;
+}
+
+.d-table {
+    display: table;
+    width: 100%;
+}
+
+.d-table-row {
+    display: table-row;
+}
+
+.d-tablecell {
+    display: table-cell;
+}
+
+.p-absolute-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+}
+
+.p-absolute-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 300px;
+}
+
+.flex-auto {
+    flex: 1;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.d-twogrids-left-fixed {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.d-twogrids-right-fixed {
+    display: grid;
+    grid-template-columns: auto 200px;
+}
+
+.d-threegrids-right-auto {
+    display: grid;
+    grid-template-columns: 100px 200px auto;
+}
+
+.float-left-random {
+    padding-left: 200px;
+}
+
+.float-left-random .float-l {
+    margin-left: -200px;
+    width: 100%;
+}
+
+.float-left-random .float-r {
+    width: 200px;
+}
+
+.double-wings-layout .double-wings-left {
+    float: left;
+    width: 100px;
+    height: 100%;
+    margin-left: -100%;
+}
+
+.double-wings-layout .double-wings-right {
+    float: left;
+    width: 200px;
+    height: 100%;
+    margin-left: -200px;
+}
+
+.double-wings-layout .double-wings-center {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.double-wings-layout .double-wings-center .content {
+    padding: 0 200px 0 100px;
+}
+
+.grail-layout {
+    padding: 0 200px 0 100px;
+}
+
+.grail-layout .grail-left {
+    margin-left: -100%;
+    position: relative;
+    left: -100px;
+    float: left;
+    width: 100px;
+    height: 100%;
+}
+
+.grail-layout .grail-center {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.grail-layout .grail-right {
+    position: relative;
+    left: 200px;
+    width: 200px;
+    height: 100%;
+    margin-left: -200px;
+    float: left;
+}
+
+.grid-layout-middle-auto {
+    display: grid;
+    grid-template-columns: 100px auto 200px;
+    grid-template-rows: 60px auto 60px;
+    grid-template-areas: "leftside main rightside";
+}
+
+.grid-layout-middle-auto .grid-leftside {
+    grid-area: leftside;
+}
+
+.grid-layout-middle-auto .grid-rightside {
+    grid-area: rightside;
+}
+
+.grid-layout-middle-auto .grid-center {
+    grid-area: main;
+}
+
+.d-gird-column-multiple {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.d-grid-multiple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.ml10-minus {
+    margin-left: -10px;
+}
+
+.d-table-row .border,
+.d-flex-row .border {
+    border-width: 1px 0 0px 1px;
+}
+
+.d-table-row .d-tablecell:last-child,
+.d-flex-row .flex-auto:last-child {
+    border-right-width: 1px;
+}
+
+.d-table-row:last-child .d-tablecell,
+.d-flex-row:last-child .flex-auto {
+    border-bottom-width: 1px;
+}
+
+.p-absolute-out {
+    position: absolute;
+    left: -999em;
+    top: -999em;
+}
