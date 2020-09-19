@@ -175,7 +175,7 @@ https://github.com/Sweet-KK/css-layout */
 .ul-list-content i {
     width: 30px;
     height: 20px;
-    background: #ddd url('g.png') no-repeat center center / 30px 20px;
+    background: #ddd url('./g.png') no-repeat center center / 30px 20px;
 }
 
 .ul-list-content {
